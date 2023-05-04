@@ -32,13 +32,19 @@ namespace AutomatedBrowser
             // Create a browser component
             chromeBrowser = new ChromiumWebBrowser("https://www.ultrasounds.com/");
             // Add it to the form and fill it to the form window.
+            chromeBrowser.IsBrowserInitializedChanged += OnIsBrowserInitializedChanged;
             Controls.Add(chromeBrowser);
             chromeBrowser.Dock = DockStyle.Fill;
-            chromeDevTools = chromeBrowser.GetDevToolsClient();
+            
         }
         private void Browser_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
+        }
+
+        private void OnIsBrowserInitializedChanged(object sender, EventArgs e)
+        {
+            chromeDevTools = chromeBrowser.GetDevToolsClient();
         }
         public async Task<Bitmap> GetScreenshot()
         {
