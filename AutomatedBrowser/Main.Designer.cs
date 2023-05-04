@@ -28,23 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.toggleBrowser = new System.Windows.Forms.Button();
+            this.console = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // toggleBrowser
+            // console
             // 
-            this.toggleBrowser.Location = new System.Drawing.Point(585, 302);
-            this.toggleBrowser.Name = "toggleBrowser";
-            this.toggleBrowser.Size = new System.Drawing.Size(89, 23);
-            this.toggleBrowser.TabIndex = 0;
-            this.toggleBrowser.Text = "Toggle Browser";
-            this.toggleBrowser.UseVisualStyleBackColor = true;
-            this.toggleBrowser.Click += new System.EventHandler(this.ToggleBrowser_Click);
+            this.console.Location = new System.Drawing.Point(12, 12);
+            this.console.Name = "console";
+            this.console.ReadOnly = true;
+            this.console.Size = new System.Drawing.Size(281, 427);
+            this.console.TabIndex = 1;
+            this.console.Text = "";
             // 
             // Main
             // 
             this.ClientSize = new System.Drawing.Size(800, 451);
-            this.Controls.Add(this.toggleBrowser);
+            this.Controls.Add(this.console);
             this.Name = "Main";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Closing);
             this.Load += new System.EventHandler(this.Main_Load);
@@ -53,8 +52,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button toggleBrowser;
+        private System.Windows.Forms.RichTextBox console;
     }
 }
 

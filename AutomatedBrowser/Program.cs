@@ -24,7 +24,7 @@ namespace AutomatedBrowser
             if (settings.CefCommandLineArgs.ContainsKey("enable-system-flash"))
                 settings.CefCommandLineArgs.Remove("enable-system-flash");
             settings.CefCommandLineArgs.Add("enable-system-flash", string.Empty);
-            settings.CefCommandLineArgs.Add("ppapi-flash-path", @"D:\git_personal\automated-browser\AutomatedBrowser\Flash\pepflashplayer.dll");
+            settings.CefCommandLineArgs.Add("ppapi-flash-path", AppContext.BaseDirectory + "Flash\\pepflashplayer.dll");
             settings.CefCommandLineArgs.Add("ppapi-flash-version", "32.0.0.371");
             settings.CefCommandLineArgs["plugin-policy"] = "allow";
             settings.CefCommandLineArgs.Add("allow-outdated-plugins", "1");
