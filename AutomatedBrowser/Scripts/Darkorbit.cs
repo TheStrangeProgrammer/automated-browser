@@ -1,10 +1,14 @@
 ﻿using CefSharp;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace AutomatedBrowser.Scripts
 {
@@ -12,13 +16,14 @@ namespace AutomatedBrowser.Scripts
     {
         private Browser mainBrowser;
         private Browser gameBrowser;
-        public Darkorbit() {
-            
+        public Darkorbit()
+        {
+
         }
 
-        public override void Init(RichTextBox console)
+        public override void Init(Main mainForm)
         {
-            base.Init(console);
+            base.Init(mainForm);
             mainBrowser = new Browser();
             mainBrowser.Show();
             mainBrowser.Hide();
@@ -26,6 +31,16 @@ namespace AutomatedBrowser.Scripts
             gameBrowser.Show();
             gameBrowser.Hide();
             WriteLine("test");
+
+            Button newButton = new Button
+            {
+                Text = "Created Button",
+                Location = new Point(400, 400),
+                Size = new Size(50, 100)
+
+            };
+            newButton.Click += screenshot_Click;
+            mainForm.Controls.Add(newButton);
         }
         public override void Run()
         {
@@ -41,5 +56,10 @@ namespace AutomatedBrowser.Scripts
             if (gameBrowser.Visible) gameBrowser.Hide();
             else gameBrowser.Show();
         }
+        private void screenshot_Click(object sender, EventArgs e)
+        {
+            //DrawControlToImage();
+        }
+        
     }
 }

@@ -52,7 +52,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.RichTextBox console;
+
+        public System.Windows.Forms.RichTextBox console;
     }
 }
 

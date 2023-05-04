@@ -9,10 +9,12 @@ namespace AutomatedBrowser.Scripts
 {
     public class Script
     {
+        Main mainForm;
         RichTextBox console;
-        public virtual void Init(RichTextBox console)
+        public virtual void Init(Main mainForm)
         {
-            this.console = console;
+            this.mainForm = mainForm;
+            console = mainForm.console;
         }
         public virtual void Run()
         {

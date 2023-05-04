@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AutomatedBrowser.Properties;
+using System.IO;
 
 namespace AutomatedBrowser
 {
@@ -28,7 +29,7 @@ namespace AutomatedBrowser
             settings.CefCommandLineArgs.Add("ppapi-flash-version", "32.0.0.371");
             settings.CefCommandLineArgs["plugin-policy"] = "allow";
             settings.CefCommandLineArgs.Add("allow-outdated-plugins", "1");
-            
+            settings.CachePath = Path.GetFullPath("cache");
 
             // Initialize cef with the provided settings
             Cef.Initialize(settings);

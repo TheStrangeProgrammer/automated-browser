@@ -41,7 +41,7 @@ namespace AutomatedBrowser
         private void Main_Load(object sender, EventArgs e)
         {
             scriptLoopTimer.Start();
-            darkorbitScript.Init(console);
+            darkorbitScript.Init(this);
         }
 
         
