@@ -28,27 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.chromiumWebBrowser1 = new CefSharp.WinForms.ChromiumWebBrowser();
+            this.toggleBrowser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // chromiumWebBrowser1
+            // toggleBrowser
             // 
-            this.chromiumWebBrowser1.ActivateBrowserOnCreation = false;
-            this.chromiumWebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chromiumWebBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.chromiumWebBrowser1.Name = "chromiumWebBrowser1";
-            this.chromiumWebBrowser1.Size = new System.Drawing.Size(800, 450);
-            this.chromiumWebBrowser1.TabIndex = 0;
-            this.chromiumWebBrowser1.LoadingStateChanged += new System.EventHandler<CefSharp.LoadingStateChangedEventArgs>(this.chromiumWebBrowser1_LoadingStateChanged);
+            this.toggleBrowser.Location = new System.Drawing.Point(585, 302);
+            this.toggleBrowser.Name = "toggleBrowser";
+            this.toggleBrowser.Size = new System.Drawing.Size(89, 23);
+            this.toggleBrowser.TabIndex = 0;
+            this.toggleBrowser.Text = "Toggle Browser";
+            this.toggleBrowser.UseVisualStyleBackColor = true;
+            this.toggleBrowser.Click += new System.EventHandler(this.ToggleBrowser_Click);
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.chromiumWebBrowser1);
+            this.ClientSize = new System.Drawing.Size(800, 451);
+            this.Controls.Add(this.toggleBrowser);
             this.Name = "Main";
-            this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Closing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
 
@@ -56,7 +54,7 @@
 
         #endregion
 
-        private CefSharp.WinForms.ChromiumWebBrowser chromiumWebBrowser1;
+        private System.Windows.Forms.Button toggleBrowser;
     }
 }
 
