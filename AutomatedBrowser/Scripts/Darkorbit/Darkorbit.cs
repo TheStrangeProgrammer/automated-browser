@@ -1,33 +1,30 @@
-﻿using CefSharp;
+﻿using AutomatedBrowser;
+using AutomatedBrowser.Scripts;
+using AutomatedBrowser.Utils;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
-namespace AutomatedBrowser.Scripts
-{
+
     public class Darkorbit : Script
     {
-        private Browser mainBrowser;
-        private Browser gameBrowser;
+        private BrowserForm mainBrowser;
+        private BrowserForm gameBrowser;
         public Darkorbit()
         {
-
+            
         }
-
-        public override void Init(Main mainForm)
+        public override void Start()
+        {
+            Console.WriteLine("works");
+        }
+        public override void Init(MainForm mainForm)
         {
             base.Init(mainForm);
-            mainBrowser = new Browser();
+            mainBrowser = new BrowserForm();
             mainBrowser.Show();
             mainBrowser.Hide();
-            gameBrowser = new Browser();
+            gameBrowser = new BrowserForm();
             gameBrowser.Show();
             gameBrowser.Hide();
             WriteLine("test");
@@ -42,7 +39,7 @@ namespace AutomatedBrowser.Scripts
             newButton.Click += screenshot_Click;
             mainForm.Controls.Add(newButton);
         }
-        public override void Run()
+        public override void Loop()
         {
 
         }
@@ -62,4 +59,3 @@ namespace AutomatedBrowser.Scripts
         }
         
     }
-}

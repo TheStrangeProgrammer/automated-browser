@@ -1,6 +1,6 @@
 ﻿namespace AutomatedBrowser
 {
-    partial class Main
+    partial class BrowserForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.console = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // console
+            // Browser
             // 
-            this.console.Location = new System.Drawing.Point(12, 12);
-            this.console.Name = "console";
-            this.console.ReadOnly = true;
-            this.console.Size = new System.Drawing.Size(281, 427);
-            this.console.TabIndex = 1;
-            this.console.Text = "";
-            // 
-            // Main
-            // 
-            this.ClientSize = new System.Drawing.Size(800, 451);
-            this.Controls.Add(this.console);
-            this.Name = "Main";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Closing);
-            this.Load += new System.EventHandler(this.Main_Load);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "Browser";
+            this.Text = "Browser";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Browser_FormClosing);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        public System.Windows.Forms.RichTextBox console;
     }
 }
-

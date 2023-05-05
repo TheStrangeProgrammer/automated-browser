@@ -16,11 +16,11 @@ using CefSharp.DevTools.Page;
 
 namespace AutomatedBrowser
 {
-    public partial class Browser : Form
+    public partial class BrowserForm : Form
     {
         public ChromiumWebBrowser chromeBrowser;
         public DevToolsClient chromeDevTools;
-        public Browser()
+        public BrowserForm()
         {
             InitializeComponent();
             InitializeChromium();
@@ -30,7 +30,7 @@ namespace AutomatedBrowser
         {
             
             // Create a browser component
-            chromeBrowser = new ChromiumWebBrowser("https://www.ultrasounds.com/");
+            chromeBrowser = new ChromiumWebBrowser("about:blank");
             // Add it to the form and fill it to the form window.
             chromeBrowser.IsBrowserInitializedChanged += OnIsBrowserInitializedChanged;
             Controls.Add(chromeBrowser);
@@ -53,13 +53,13 @@ namespace AutomatedBrowser
             return new Bitmap(new MemoryStream(response.Data));
             
         }
-        public async void SaveScreenshot()
+        public async void SaveScreenshotPng(string dir,string name)
         {
 
             CaptureScreenshotResponse response = await chromeDevTools.Page.CaptureScreenshotAsync();
             using (Image image = Image.FromStream(new MemoryStream(response.Data)))
             {
-                image.Save(@"D:\whatever.png", ImageFormat.Png);
+                image.Save(dir +name+ ".png", ImageFormat.Png);
             }
         }
     }
