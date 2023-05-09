@@ -37,6 +37,7 @@
             this.scriptListBox = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.refresh = new System.Windows.Forms.Button();
+            this.loadButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -88,6 +89,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.loadButton);
             this.tabPage1.Controls.Add(this.refresh);
             this.tabPage1.Controls.Add(this.stopButton);
             this.tabPage1.Controls.Add(this.runButton);
@@ -112,7 +114,7 @@
             // 
             // runButton
             // 
-            this.runButton.Location = new System.Drawing.Point(184, 364);
+            this.runButton.Location = new System.Drawing.Point(265, 364);
             this.runButton.Name = "runButton";
             this.runButton.Size = new System.Drawing.Size(75, 23);
             this.runButton.TabIndex = 1;
@@ -127,6 +129,7 @@
             this.scriptListBox.Name = "scriptListBox";
             this.scriptListBox.Size = new System.Drawing.Size(154, 342);
             this.scriptListBox.TabIndex = 0;
+            this.scriptListBox.SelectedIndexChanged += new System.EventHandler(this.ScriptListBox_Selected);
             // 
             // tabPage2
             // 
@@ -147,6 +150,15 @@
             this.refresh.Text = "Refresh";
             this.refresh.UseVisualStyleBackColor = true;
             this.refresh.Click += new System.EventHandler(this.refresh_Click);
+            // 
+            // loadButton
+            // 
+            this.loadButton.Location = new System.Drawing.Point(184, 364);
+            this.loadButton.Name = "loadButton";
+            this.loadButton.Size = new System.Drawing.Size(75, 23);
+            this.loadButton.TabIndex = 5;
+            this.loadButton.Text = "Load";
+            this.loadButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -176,6 +188,7 @@
         private System.Windows.Forms.Button stopButton;
         private System.Windows.Forms.Button runButton;
         private System.Windows.Forms.Button refresh;
+        private System.Windows.Forms.Button loadButton;
     }
 }
 

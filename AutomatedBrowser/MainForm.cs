@@ -35,7 +35,7 @@ namespace AutomatedBrowser
         }
 
         private void RunScript_Click(object sender, EventArgs e) {
-            scriptManager.CompileScript((string)scriptListBox.SelectedItem);
+            scriptManager.RunScript((string)scriptListBox.SelectedItem);
         }
         private void StopScript_Click(object sender, EventArgs e)
         {
@@ -50,7 +50,10 @@ namespace AutomatedBrowser
         {
             RefreshScriptList();
         }
-
+        private void ScriptListBox_Selected(object sender, EventArgs e)
+        {
+            scriptManager.ScriptSelected();
+        }
         private void RefreshScriptList()
         {
             scriptListBox.Items.Clear();

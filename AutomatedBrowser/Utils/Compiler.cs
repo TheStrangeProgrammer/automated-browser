@@ -7,10 +7,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Scripting;
+
 using System.IO;
-using Microsoft.CodeAnalysis.Scripting;
+
 using CefSharp.DevTools.DOM;
 
 namespace AutomatedBrowser.Utils
@@ -67,8 +66,8 @@ namespace AutomatedBrowser.Utils
                 Assembly assembly = results.CompiledAssembly;
                 Type program = assembly.GetType("Darkorbit");
                 object compiledClass = assembly.CreateInstance(startClass);
-                ((Scripts.Script)compiledClass).Start();
-                //return (Scripts.Script)assembly.CreateInstance("Darkorbit");
+                //((Scripts.Script)compiledClass).Start();
+                return (Scripts.Script)compiledClass;
                 //MethodInfo main = program.GetMethod("Start");
                 //main.Invoke(null, null);
 

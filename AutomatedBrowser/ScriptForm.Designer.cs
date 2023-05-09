@@ -30,14 +30,20 @@
         {
             this.console = new System.Windows.Forms.RichTextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.browserTabPage = new System.Windows.Forms.TabControl();
+            this.configTabPage = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.viewBrowser = new System.Windows.Forms.Button();
+            this.browserListBox = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.statsTabPage = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.browserTabPage.SuspendLayout();
+            this.configTabPage.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // console
@@ -62,46 +68,87 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
+            this.splitContainer1.Panel2.Controls.Add(this.browserTabPage);
             this.splitContainer1.Size = new System.Drawing.Size(776, 426);
             this.splitContainer1.SplitterDistance = 258;
             this.splitContainer1.TabIndex = 1;
             // 
-            // tabControl1
+            // browserTabPage
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(3, 3);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(508, 420);
-            this.tabControl1.TabIndex = 0;
+            this.browserTabPage.Controls.Add(this.configTabPage);
+            this.browserTabPage.Controls.Add(this.tabPage2);
+            this.browserTabPage.Controls.Add(this.statsTabPage);
+            this.browserTabPage.Location = new System.Drawing.Point(3, 31);
+            this.browserTabPage.Name = "browserTabPage";
+            this.browserTabPage.SelectedIndex = 0;
+            this.browserTabPage.Size = new System.Drawing.Size(508, 392);
+            this.browserTabPage.TabIndex = 0;
             // 
-            // tabPage1
+            // configTabPage
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(500, 394);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.configTabPage.Controls.Add(this.label1);
+            this.configTabPage.Location = new System.Drawing.Point(4, 22);
+            this.configTabPage.Name = "configTabPage";
+            this.configTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.configTabPage.Size = new System.Drawing.Size(500, 366);
+            this.configTabPage.TabIndex = 0;
+            this.configTabPage.Text = "Config";
+            this.configTabPage.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.viewBrowser);
+            this.tabPage2.Controls.Add(this.browserListBox);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(192, 74);
+            this.tabPage2.Size = new System.Drawing.Size(500, 366);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Browsers";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // viewBrowser
+            // 
+            this.viewBrowser.Location = new System.Drawing.Point(401, 326);
+            this.viewBrowser.Name = "viewBrowser";
+            this.viewBrowser.Size = new System.Drawing.Size(93, 23);
+            this.viewBrowser.TabIndex = 1;
+            this.viewBrowser.Text = "View Browser";
+            this.viewBrowser.UseVisualStyleBackColor = true;
+            // 
+            // browserListBox
+            // 
+            this.browserListBox.FormattingEnabled = true;
+            this.browserListBox.Location = new System.Drawing.Point(6, 4);
+            this.browserListBox.Name = "browserListBox";
+            this.browserListBox.Size = new System.Drawing.Size(488, 316);
+            this.browserListBox.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(49, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
+            // statsTabPage
+            // 
+            this.statsTabPage.AutoScroll = true;
+            this.statsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.statsTabPage.Name = "statsTabPage";
+            this.statsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.statsTabPage.Size = new System.Drawing.Size(500, 366);
+            this.statsTabPage.TabIndex = 2;
+            this.statsTabPage.Text = "Stats";
+            this.statsTabPage.UseVisualStyleBackColor = true;
             // 
             // ScriptForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 485);
             this.Controls.Add(this.splitContainer1);
             this.Name = "ScriptForm";
             this.Text = "ScriptForm";
@@ -110,17 +157,23 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.browserTabPage.ResumeLayout(false);
+            this.configTabPage.ResumeLayout(false);
+            this.configTabPage.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox console;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabControl browserTabPage;
         private System.Windows.Forms.TabPage tabPage2;
+        public System.Windows.Forms.TabPage configTabPage;
+        public System.Windows.Forms.Button viewBrowser;
+        public System.Windows.Forms.RichTextBox console;
+        public System.Windows.Forms.ListBox browserListBox;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TabPage statsTabPage;
     }
 }

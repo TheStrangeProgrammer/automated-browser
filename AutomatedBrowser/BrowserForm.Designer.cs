@@ -30,14 +30,15 @@
         {
             this.SuspendLayout();
             // 
-            // Browser
+            // BrowserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Browser";
+            this.Name = "BrowserForm";
             this.Text = "Browser";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Browser_FormClosing);
+            this.Load += new System.EventHandler(this.BrowserForm_Load);
             this.ResumeLayout(false);
 
         }

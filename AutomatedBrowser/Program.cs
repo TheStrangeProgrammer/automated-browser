@@ -70,7 +70,7 @@ namespace AutomatedBrowser
         {
             if (console != null)
             {
-                console.Text += e.Value;
+                console.Text += e.Value + "\n";
             }
         }
 
